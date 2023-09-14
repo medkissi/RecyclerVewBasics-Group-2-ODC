@@ -4,6 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,6 +32,21 @@ class PresidentActivity : AppCompatActivity(), OnItemClickListner {
         adapter.submitList(presidents)
 
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.parametre){
+            Toast.makeText(this,"Bienvenue dans vos parametres",Toast.LENGTH_SHORT).show()
+        }
+        if(item.itemId == R.id.about){
+            Toast.makeText(this,"Bienvenue sur la page A propos",Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
     }
 override fun onClick(president: President) {
     val intent = Intent(this, DetailActivity::class.java)

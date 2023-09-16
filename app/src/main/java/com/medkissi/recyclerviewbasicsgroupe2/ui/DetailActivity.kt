@@ -1,13 +1,12 @@
-package com.medkissi.recyclerviewbasicsgroupe2
+package com.medkissi.recyclerviewbasicsgroupe2.ui
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import com.medkissi.recyclerviewbasicsgroupe2.model.Animal
-import com.medkissi.recyclerviewbasicsgroupe2.model.President
-import org.w3c.dom.Text
+import com.medkissi.recyclerviewbasicsgroupe2.R
+import com.medkissi.recyclerviewbasicsgroupe2.data.model.President
 
 class DetailActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -24,5 +23,9 @@ class DetailActivity : AppCompatActivity() {
         nom.text = data.nom
         pays.text = data.pays
         biographie.text = data.biographie
+
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
+
     }
 }

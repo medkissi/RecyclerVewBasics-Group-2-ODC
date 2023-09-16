@@ -1,6 +1,5 @@
-package com.medkissi.recyclerviewbasicsgroupe2
+package com.medkissi.recyclerviewbasicsgroupe2.adapters
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.medkissi.recyclerviewbasicsgroupe2.model.Animal
+import com.medkissi.recyclerviewbasicsgroupe2.R
+import com.medkissi.recyclerviewbasicsgroupe2.data.model.Animal
 
 class AnimalAdapter(
     val data: List<Animal>,
@@ -18,7 +18,7 @@ class AnimalAdapter(
 
 
     inner class AnimalViewHolder(val itemView: View) : ViewHolder(itemView.rootView) {
-        val image = itemView.findViewById<ImageView>(R.id.imageView)
+        val image = itemView.findViewById<ImageView>(R.id.img)
         val nom = itemView.findViewById<TextView>(R.id.tv_nom)
         val vitesse = itemView.findViewById<TextView>(R.id.tv_vitesse)
 

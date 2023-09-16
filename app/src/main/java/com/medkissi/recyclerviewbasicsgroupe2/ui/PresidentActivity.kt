@@ -7,7 +7,10 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+
 import androidx.activity.viewModels
+import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,6 +35,14 @@ class PresidentActivity : AppCompatActivity(), OnItemClickListner {
         val adapter = PresidentAdapter(this)
 
         val linearLayoutManager = LinearLayoutManager(this)
+
+        val toolbar = findViewById<Toolbar>(R.id.topAppBar)
+        val drawer = findViewById<DrawerLayout>(R.id.drawer)
+
+        toolbar.setOnClickListener{
+            drawer.open()
+
+        }
 
         recyclerView.layoutManager = linearLayoutManager
         recyclerView.adapter = adapter

@@ -19,7 +19,7 @@ class PresidentViewModel:ViewModel() {
 
 
     fun getData(){
-        _presidents.value = repository.getPresidents()
+        _presidents.value= repository.getPresidents()
 
 
     }
